@@ -26,6 +26,13 @@ py_console_script_binary(
     pkg = "@pip//flake8:pkg",
 )
 
+# We can test that it works with:
+# bazel run :restructuredtext-lint -- --help
+py_console_script_binary(
+    name = "restructuredtext-lint",
+    pkg = "@pip//restructuredtext_lint:pkg",
+)
+
 eslint_bin.eslint_binary(name = "eslint")
 
 stylelint_bin.stylelint_binary(name = "stylelint")

@@ -8,6 +8,7 @@ load("@aspect_rules_lint//lint:flake8.bzl", "lint_flake8_aspect")
 load("@aspect_rules_lint//lint:ktlint.bzl", "lint_ktlint_aspect")
 load("@aspect_rules_lint//lint:lint_test.bzl", "lint_test")
 load("@aspect_rules_lint//lint:pmd.bzl", "lint_pmd_aspect")
+load("@aspect_rules_lint//lint:rst_lint.bzl", "lint_rst_aspect")
 load("@aspect_rules_lint//lint:ruff.bzl", "lint_ruff_aspect")
 load("@aspect_rules_lint//lint:shellcheck.bzl", "lint_shellcheck_aspect")
 load("@aspect_rules_lint//lint:stylelint.bzl", "lint_stylelint_aspect")
@@ -78,6 +79,10 @@ vale = lint_vale_aspect(
     binary = "@@//tools/lint:vale",
     config = "@@//:.vale.ini",
     styles = "@@//tools/lint:vale_styles",
+)
+
+rst_lint = lint_rst_aspect(
+    binary = "@@//tools/lint:restructuredtext-lint",
 )
 
 ktlint = lint_ktlint_aspect(

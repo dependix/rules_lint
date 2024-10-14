@@ -1,1 +1,2 @@
 flake8
+sphinx-lint==1.0.0

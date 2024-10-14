@@ -25,6 +25,12 @@ filegroup(
     tags = ["markdown"],
 )
 
+filegroup(
+    name = "rst",
+    srcs = ["hello.rst"],
+    tags = ["sphinx_lint"],
+)
+
 ts_project(
     name = "ts_dep",
     srcs = ["file-dep.ts"],
